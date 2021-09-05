@@ -2,20 +2,27 @@
  
  class Counter extends React.Component {
      state = {
-         count:10,
-     }
+         count:0,
+         imageUrl: 'https://picsum.photos/200'
+     };
+
+     styles ={
+         fontSize: 10,
+         fontWeight:'bold'
+     };
+
      render() { 
          return (
             <div>
-                <span>{this.state.count}</span>
-                <span>{this.formatCount()}</span>
-                <button>Increment</button>
+                <span><img src = {this.state.imageUrl} alt =""/></span>
+                <span className="">{this.formatCount()}</span>
+                <button className="" >Increment</button>
             </div>
         );
      }
      formatCount(){
          const {count} = this.state;
-         return count === 10 ? <h1>Ten</h1> : count;
+         return count === 0 ? <h1>Zero</h1> : count;
      }
  }
   
