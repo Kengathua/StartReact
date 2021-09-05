@@ -7,22 +7,21 @@
      };
 
      styles ={
-         fontSize: 10,
+         fontSize: 30,
          fontWeight:'bold'
      };
 
      render() { 
          return (
             <div>
-                <span><img src = {this.state.imageUrl} alt =""/></span>
-                <span className="">{this.formatCount()}</span>
+                <span style = {this.styles} className="">{this.formatCount()}</span>
                 <button className="" >Increment</button>
             </div>
         );
      }
      formatCount(){
          const {count} = this.state;
-         return count === 0 ? <h1>Zero</h1> : count;
+         return count === 0 ? <a>Zero</a> : count;
      }
  }
   
