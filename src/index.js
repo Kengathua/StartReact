@@ -9,6 +9,11 @@ const firstBook={
     img    : 'https://images-na.ssl-images-amazon.com/images/I/8123TQCpIXL._AC_UL200_SR200,200_.jpg',
 }
 
+const secondBook={
+    author : 'Robert Greene',
+    title  : 'The 48 Laws of Power',
+    img    : 'https://images-na.ssl-images-amazon.com/images/I/71951W96oWL._AC_UL200_SR200,200_.jpg',
+}
 
 function BookList(){
     return (
@@ -18,7 +23,11 @@ function BookList(){
             author={firstBook.author}
             title = {firstBook.title}
              />
-            <Book title = 'random title' number={22} />
+            <Book 
+            img={secondBook.img}
+            author={secondBook.author}
+            title = {secondBook.title}
+             />
         </section>
         );
 }
