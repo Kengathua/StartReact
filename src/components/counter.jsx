@@ -7,15 +7,17 @@
      };
 
      styles ={
-         fontSize: 30,
+         fontSize: 20,
          fontWeight:'bold'
      };
 
      render() { 
+         let classes = "result-before";
+         classes+= (this.state.count === 0)? "result-after" : "result-before";
          return (
             <div>
-                <span style = {this.styles} className="">{this.formatCount()}</span>
-                <button className="" >Increment</button>
+                <span className= {classes}>{this.formatCount()}</span>
+                <button className="increment" >Increment</button>
             </div>
         );
      }

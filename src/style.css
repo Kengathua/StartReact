@@ -59,4 +59,23 @@ nav ul li a:hover{
 
 
 
-/*================================Slider attributes==================================*/
+/*================================Results==================================*/
+.result-before{
+  border-radius: 2px;
+  background-color: white;
+  width: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.result-after{
+  border-radius: 2px;
+  background-color: yellow;
+  width: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.increment{
+  margin-top: 10px;
+}
