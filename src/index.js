@@ -33,7 +33,7 @@ function BookList(){
 }
 
 
-const Book =(img, title, author)=>{
+const Book =({img, title, author})=>{
     //const {img, title, author} = props
     return(
         <article className="book">
