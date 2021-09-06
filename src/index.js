@@ -1,57 +1,46 @@
+import { getElementError } from '@testing-library/dom'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
 
-class Employee extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return <div>
-            <h1>Employee Component...</h1>
-            <p>
-                <label> Id: <b>{this.props.Id}</b></label>
-            </p>
-            <p>
-                <label> Name: <b>{this.props.Name}</b></label>
-            </p>
-            <p>
-                <label> Location: <b>{this.props.Location}</b></label>
-            </p><p>
-                <label> Total Salary: <b>{this.props.Salary}</b></label>
-            </p>
-            <Salary  BasicSalary = {this.props.BasicSalary} HRA={this.props.HRA}
-                SpecialAllowance={this.props.SpecialAllowance}></Salary>
-        </div>
-    }
+function BookList(){
+    return (
+        <section className="bookList"> 
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+            <Book />
+        </section>
+        );
 }
 
-class Salary extends React.Component{
-    constructor(props){
-        super(props);
-    }
-    render(){
-        return <div>
-            <h1>Salary Details...</h1>
-            <p>
-                <label>Basic Salary : <b>{this.props.BasicSalary}</b></label>
-            </p>
-            <p>
-                <label>HRA : <b>{this.props.HRA}</b></label>
-            </p>
-            <p>
-                <label>SpecialAllowance : <b>{this.props.SpecialAllowance}</b></label>
-            </p>
-        </div>
-    }
-}
+const Book =()=>{
+    return(
+        <article className="book">
+            <Image></Image>
+            <Title></Title>
+            <Author></Author>
+        </article>
+    );
+};
 
-const element = <Employee Id ="101" Name="Kennedy" Location="Nairobi" Salary="404484" BasicSalary="20000" HRA="10000" SpecialAllowance ="15000"></Employee>
+const Image =()=>{
+    return(
+        <img src="https://images-na.ssl-images-amazon.com/images/I/8123TQCpIXL._AC_UL200_SR200,200_.jpg" alt='' />
+    );
+};
 
-ReactDOM.render(element, document.getElementById("root"));
+const Title=()=> <h1>The Hero Code: Lessons Learned from Lives…</h1>
 
+const Author =()=> <h4 style ={{color:'blue', fontSize:'0.75rem',marginTop:'0.25rem'}}>Admiral William H. McRaven</h4>
 
-
-
-
+ReactDOM.render(<BookList />,document.getElementById('root'));
