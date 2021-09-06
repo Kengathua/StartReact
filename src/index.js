@@ -2,28 +2,37 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
-class Employee extends React.Component{
-    counter = 0;
-    state={counter:0}
-    addEmployee =()=>{
-        this.counter = this.counter+1;
-        //alert ("Add Emploee Button is CLicked "+this.counter+" times");
-        this.setState({counter:this.state.counter+1});
+class CounterCharacters extends React.Component{
+    constructor(props){
+        super(props);
+        this.state={
+            message:'', 
+        };
     }
+
+    onMessageChange(text){
+        this.setState({
+            message: 'Message has '+text.length+' number of Characters',
+        })
+    }
+
     render(){
-        return <div>
-            <h2> Addingitems to a cart Component...</h2>
-            <p>
-                <button onClick = {this.addEmployee}>Add Items to cart</button>
-            </p>
-            <p>
-                <label>You have : <b>{this.state.counter}</b> items in your cart</label>
-            </p>
-        </div>
+    return <div>
+        <h2>Welcome to Count Character Component....</h2>
+        <p>
+            <label> Enter Message : <input type ="text" 
+                onChange={e=>this.onMessageChange(e.target.value)}></input></label>
+        </p>
+        <p>
+            <label>{this.state.message}</label>
+        </p>
+    </div>
     }
 }
 
-const element = <Employee></Employee>
+
+
+const element = <CounterCharacters></CounterCharacters>
 
 ReactDOM.render(element, document.getElementById("root"));
 
