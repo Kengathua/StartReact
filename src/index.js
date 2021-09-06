@@ -34,11 +34,12 @@ function BookList(){
 
 
 const Book =(props)=>{
+    const {img, title, author} = props
     return(
         <article className="book">
-            <img src={props.img} alt='' />
-            <h1>{props.title}</h1>
-            <h4 style ={{color:'blue', fontSize:'0.75rem',marginTop:'0.25rem'}}>{props.author}</h4>
+            <img src={img} alt='' />
+            <h1>{title}</h1>
+            <h4 style ={{color:'blue', fontSize:'0.75rem',marginTop:'0.25rem'}}>{author}</h4>
         </article>
     );
 };
