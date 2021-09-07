@@ -44,12 +44,17 @@ const Book =(props)=>{
     const clickHandler=()=>{
         alert('Hello world');
     }
+
+    const complexExample =(author) =>{
+        console.log(author)
+    }
     return(
         <article className="book">
             <img src={img} alt='' />
             <h1 onClick={()=>alert(title)}>{title}</h1>
             <h4 style ={{color:'blue', fontSize:'0.75rem',marginTop:'0.25rem'}}>{author}</h4>
             <button type="button" onClick={clickHandler}>Click Here</button>
+            <button type ="button" onClick={()=>complexExample(author)}>More Complex</button>
         </article>
     );
 };
