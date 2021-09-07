@@ -5,36 +5,42 @@ import './index.css'
 
 const books=[
     {
+        id:1,
         author : 'Admiral William H. McRaven',
         title  : 'The Hero Code: Lessons Learned from Lives…',
         img    : 'https://images-na.ssl-images-amazon.com/images/I/8123TQCpIXL._AC_UL200_SR200,200_.jpg',
     },
     {
+        id:2,
         author : 'Robert Greene',
         title  : 'The 48 Laws of Power',
         img    : 'https://images-na.ssl-images-amazon.com/images/I/71951W96oWL._AC_UL200_SR200,200_.jpg',
     },
     {
+        id:3,
         author : 'Colleen Hoover',
         title  : 'It Ends with Us',
         img    : 'https://images-na.ssl-images-amazon.com/images/I/71tqt4VL%2BdS._AC_UL200_SR200,200_.jpg',
     },
 ];
 
-const names = ['join','peter','susan'];
-const newNames = names.map((name)=>{
-    console.log(name)
-    return <h1>{name}</h1>
-});
-console.log(newNames);
-
 function BookList(){
-    return <section className='booklist'>{newNames}</section>
+    return (
+    <section className='booklist'>
+        {books.map((book)=>{
+            const{img,title,author} = book;
+            return (
+                <Book key={book.id} book={book}></Book>
+            );
+        }
+        )}
+        </section>
+    )
 }
 
 
-const Book =({img, title, author})=>{
-    //const {img, title, author} = props
+const Book =(props)=>{
+    const {img, title, author} = props.book;
     return(
         <article className="book">
             <img src={img} alt='' />
