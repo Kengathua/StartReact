@@ -37,11 +37,19 @@ function BookList(){
 
 const Book =(props)=>{
     const { img, title, author } = props;
+
+    //===================events
+    //attributes and eventHandler
+    //onClick, onMouseOver
+    const clickHandler=()=>{
+        alert('Hello world');
+    }
     return(
         <article className="book">
             <img src={img} alt='' />
-            <h1>{title}</h1>
+            <h1 onClick={()=>alert(title)}>{title}</h1>
             <h4 style ={{color:'blue', fontSize:'0.75rem',marginTop:'0.25rem'}}>{author}</h4>
+            <button type="button" onClick={clickHandler}>Click Here</button>
         </article>
     );
 };
