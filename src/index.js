@@ -48,11 +48,17 @@ const Book =(props)=>{
     const complexExample =(author) =>{
         console.log(author)
     }
+
+    const hoverAction =()=>{
+        alert("You hovered over the author ")
+    }
     return(
-        <article className="book">
+        <article className="book" onMouseOver={()=>{
+            console.log (title)
+        }}>
             <img src={img} alt='' />
             <h1 onClick={()=>alert(title)}>{title}</h1>
-            <h4 style ={{color:'blue', fontSize:'0.75rem',marginTop:'0.25rem'}}>{author}</h4>
+            <h4 onMouseOver={hoverAction} style ={{color:'blue', fontSize:'0.75rem',marginTop:'0.25rem'}}>{author}</h4>
             <button type="button" onClick={clickHandler}>Click Here</button>
             <button type ="button" onClick={()=>complexExample(author)}>More Complex</button>
         </article>
